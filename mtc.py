@@ -88,12 +88,15 @@ def do_startTask():
         print("Bot Is Starting!!!......")
         while True:
             result = botmtc.solvedTask()
-            print("{b}[+]{fr}{g}{msg}{fr} >> Current Ballance {y}{saldo} MTC{fr}".format(fr=Fore.RESET,
-                                                                                         y=Fore.YELLOW,
-                                                                                         b=Fore.BLUE,
-                                                                                         g=Fore.GREEN,
-                                                                                         msg=result[0]["notif"],
-                                                                                         saldo=result[0]["wallet"]))
+            try:
+                print("{b}[+]{fr}{g}{msg}{fr} >> Current Ballance {y}{saldo} MTC{fr}".format(fr=Fore.RESET,
+                                                                                            y=Fore.YELLOW,
+                                                                                            b=Fore.BLUE,
+                                                                                            g=Fore.GREEN,
+                                                                                            msg=result[0]["notif"],
+                                                                                            saldo=result[0]["wallet"]))
+            except:
+                print(result)
     except KeyboardInterrupt:
         print("Program Was Stopped....")
 
